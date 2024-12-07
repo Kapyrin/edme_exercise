@@ -1,6 +1,11 @@
 package vladimir;
 
+import java.util.Scanner;
+
 class Main {
+    public static void main(String[] args) {
+        input();
+    }
 
     public static String calc(String input) {
         String[] splitInput = parseInput(input);
@@ -51,5 +56,23 @@ class Main {
             default -> throw new IllegalArgumentException("Invalid operator");
         };
     }
+
+    private static void input() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a mathematical expression: ");
+
+        while (true) {
+            try {
+                String userInput = scanner.nextLine();
+                String result = calc(userInput);
+                System.out.println("Result: " + result);
+                break;
+            } catch (IllegalArgumentException | ArithmeticException e) {
+                System.out.println("Error: " + e.getMessage());
+                System.out.println("Please try again.");
+            }
+        }
+    }
 }
+
 
