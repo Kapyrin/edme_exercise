@@ -17,7 +17,6 @@ class Main {
         validateNumbers(firstOperandInt, secondOperandInt);
         int result = makeOperation(firstOperandInt, secondOperandInt, operation);
         return String.valueOf(result);
-
     }
 
     private static String[] parseInput(String input) {
@@ -59,7 +58,7 @@ class Main {
 
     private static void input() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a mathematical expression: ");
+        System.out.println("Enter a mathematical expression like this 2 + 3 : ");
 
         while (true) {
             try {
